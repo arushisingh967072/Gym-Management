@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: url('photo1.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            filter: blur(6px);
+            z-index: -1;
+        }
+
+        /* ✅ Home Button (Always Pink) */
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            color: rgb(212, 34, 129);
+            font-size: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .home-btn:hover {
+            color: pink;
+        }
+
+        /* Form Container */
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 350px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            display: none;
+        }
+
+        /* ✅ Register Button */
+        .form-group button {
+            background: linear-gradient(45deg, #ff4081, #ff79a2);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .form-group button:hover {
+            background: linear-gradient(45deg, #ff3069, #ff608a);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ✅ Home Button (Always Pink) -->
+    <a href="gym.html" class="home-btn">🏠 Home</a>
+
+    <div class="container">
+        <h2>Gym Registration</h2>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" placeholder="Enter your name">
+                <div class="error" id="nameError">Please enter your name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender">
+                    <option value="" disabled selected>Choose</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                <div class="error" id="genderError">Please select your gender</div>
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" placeholder="Enter your weight">
+                <div class="error" id="weightError">Please enter your weight</div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let isValid = true;
+
+            let name = document.getElementById("name").value.trim();
+            let gender = document.getElementById("gender").value;
+            let weight = document.getElementById("weight").value.trim();
+
+            // Name Validation
+            if (name === "") {
+                document.getElementById("nameError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("nameError").style.display = "none";
+            }
+
+            // Gender Validation
+            if (gender === "") {
+                document.getElementById("genderError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("genderError").style.display = "none";
+            }
+
+            // Weight Validation
+            if (weight === "") {
+                document.getElementById("weightError").style.display = "block";
+                isValid = false;
+            } else {
+                document.getElementById("weightError").style.display = "none";
+            }
+
+            // If all fields are valid, redirect to Diet Plan Page
+            if (isValid) {
+                window.location.href = "choice.html";
+            }
+        });
+    </script>
+
+</body>
+</html>

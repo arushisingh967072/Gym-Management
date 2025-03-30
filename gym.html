@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Gym</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Page Load Transition */
+        body {
+            position: relative;
+            color: white;
+            overflow-x: hidden;
+            opacity: 0;
+            animation: fadeInBody 1s forwards;
+        }
+
+        @keyframes fadeInBody {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Background Image */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('couple-training-together-gym.jpg') no-repeat center center/cover;
+            filter: blur(5px);
+            z-index: -1;
+        }
+
+        /* Header (Logo & Navigation Links) */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 40px;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        /* Circular Logo */
+        #img1 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #img1:hover {
+            transform: scale(1.1);
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 2px;
+            background: white;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover {
+            text-shadow: 0 0 10px white;
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 1.5s forwards;
+        }
+
+        .heading {
+            font-size: 65px;
+            font-weight: bold;
+            text-shadow: 4px 4px 10px rgba(255, 255, 255, 0.7);
+        }
+
+        .heading1 {
+            font-size: 70px;
+            color: yellow;
+            text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Glowing Neon Button */
+        .button {
+            background: linear-gradient(45deg, #ffcc00, #ff6600);
+            padding: 15px 40px; 
+            font-size: 20px; 
+            border: none;
+            border-radius: 50px;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 0 15px rgba(255, 100, 0, 0.8);
+            transition: 0.3s ease-in-out;
+            animation: neonGlow 1.5s infinite alternate;
+            margin-top: 20px; 
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(255, 100, 0, 1);
+        }
+
+        @keyframes neonGlow {
+            0% { box-shadow: 0 0 10px rgba(255, 100, 0, 0.8); }
+            100% { box-shadow: 0 0 20px rgba(255, 100, 0, 1); }
+        }
+
+        /* Animation Keyframes */
+        @keyframes slideUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links {
+                margin-top: 10px;
+            }
+
+            .heading {
+                font-size: 50px;
+            }
+
+            .heading1 {
+                font-size: 55px;
+            }
+
+            .button {
+                font-size: 18px;
+                padding: 12px 30px;
+                margin-top: 15px; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header (Logo & Navigation Links) -->
+    <div class="header">
+        <img id="img1" src="gym2.png" alt="gym logo">
+        <div class="nav-links">
+            <a href="gym.html">Home</a>
+            <a href="Schedule.html">Schedule</a>
+            <a href="About Us.html">About Us</a>
+            <a href="Classes.html">Classes</a>
+            <a href="Contact.html">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1 class="heading">FITNESS</h1>
+        <h2 class="heading1">Premium Gym</h2>
+        <a href="See our plan.html" class="button">See Our Plan</a>
+    </div>
+
+</body>
+</html>

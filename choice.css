@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fce1fb;
+    text-align: center;
+    position: relative;
+}
+
+/* Background Image with Blur */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://via.placeholder.com/1600x900'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(8px);
+    z-index: -1; /* Ensures the image stays behind other content */
+}
+
+/* Navbar Styling */
+header {
+    background: linear-gradient(45deg, #D81B60, #7E57C2); /* Purple and Pink Gradient */
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Gym Layout */
+.gym {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 50px;
+}
+
+/* Box Styling */
+.box {
+    width: 37%;
+    height: 400px;
+    background-color: #B2EBF2; /* Light Teal background */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Box Hover Effect */
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Box Click Effect */
+.box:active {
+    transform: scale(0.98);
+}
+
+/* Box Image */
+.box-img {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 20px;
+}
+
+/* Button Styling */
+button {
+    background: linear-gradient(45deg, #D81B60, #7E57C2); /* Purple and Pink Gradient */
+    color: white;
+    border: none;
+    padding: 14px 22px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0px 4px 12px rgba(126, 87, 194, 0.3);
+}
+
+/* Button Hover Effect */
+button:hover {
+    background: linear-gradient(45deg, #7E57C2, #D81B60); /* Reverse Gradient */
+    transform: scale(1.1);
+    box-shadow: 0px 6px 18px rgba(126, 87, 194, 0.4);
+}
+
+/* Button Click Effect */
+button:active {
+    transform: scale(0.95);
+}
